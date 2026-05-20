@@ -1,0 +1,36 @@
+{
+  "id": "classic-hiccup",
+  "name": "酒吧惊魂",
+  "surface": "一个男人走进一家酒吧，向酒保要了一杯水。酒保看了他一眼，突然从柜台下面掏出一把枪指着他。男人说了声\"谢谢\"，然后转身离开了。请问发生了什么？",
+  "truth": "这个男人得了打嗝症，他来酒吧要水是想通过喝水来止住打嗝。酒保是个经验丰富的人，他一眼就看出男人在打嗝，于是用枪吓他——因为惊吓是止打嗝的有效方法。男人被吓到后打嗝确实停了，所以他说了声谢谢就离开了。整个过程中没有任何恶意，酒保其实是在帮他。",
+  "coreTruth": "男人打嗝，酒保用枪吓他来止嗝",
+  "atmosphere": "bar",
+  "difficulty": "easy",
+  "initialCards": [
+    "person-victim",
+    "person-suspect",
+    "item-weapon",
+    "location-scene",
+    "behavior-did",
+    "motive-accident",
+    "relation-know",
+    "state-cause"
+  ],
+  "cardAnswerMap": {
+    "person-victim+state-cause": "no",
+    "person-victim+behavior-did": "yes",
+    "person-victim+state-mental": "yes",
+    "item-weapon+behavior-did": "yes",
+    "item-weapon+motive-accident": "yes",
+    "person-suspect+relation-know": "yes",
+    "person-suspect+motive-protection": "yes",
+    "person-suspect+behavior-did": "yes",
+    "location-scene+behavior-did": "no"
+  },
+  "unlockRules": {
+    "person-victim+state-mental": ["state-mental"],
+    "person-suspect+motive-protection": ["motive-protection"],
+    "item-weapon+motive-accident": ["motive-protection"]
+  },
+  "distractors": ["person-victim+state-cause", "location-scene+behavior-did"]
+}
